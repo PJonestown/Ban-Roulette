@@ -10,12 +10,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem 'bcrypt', '~> 3.1.7'
-
 gem 'unicorn'
-
 gem 'bootstrap-sass'
+gem 'simple_form'
 
 
 group :development, :test do
@@ -24,11 +21,17 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'pry-rails'
 end
 

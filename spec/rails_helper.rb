@@ -4,6 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
+require 'shoulda/matchers'
 
 ActiveRecord::Migration.maintain_test_schema!
 
