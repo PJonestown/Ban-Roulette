@@ -15,6 +15,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'unicorn'
 
+gem 'bootstrap-sass'
+
 
 group :development, :test do
   gem 'byebug'
