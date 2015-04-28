@@ -9,7 +9,6 @@ require 'shoulda/matchers'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-
   ############ Avdi's database_cleaner setup #############################
 
   config.before(:suite) do
@@ -20,7 +19,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each, :js => true) do
+  config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
 
