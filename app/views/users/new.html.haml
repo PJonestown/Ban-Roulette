@@ -1,0 +1,5 @@
+%h1 Create a new user
+
+= simple_form_for(@user) do |f|
+  = f.input :username, :autofocus => true
+  = f.button :submit
