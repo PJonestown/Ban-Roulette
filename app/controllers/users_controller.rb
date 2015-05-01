@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  #before_filter :set_ip_address, :only => :create
-
   def new
     @user = User.new
   end
@@ -10,9 +8,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(ip_address: request.remote_ip))
     if @user.save
-      redirect_to users_path 
+      redirect_to users_path
     else
       render :new
     end
@@ -20,8 +18,7 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:username, :ip_address).merge(
-        ip_address: request.remote_ip)
-    end
+  def user_params
+    params.require(:user).permit(:username, :ip_address)
+  end
 end
