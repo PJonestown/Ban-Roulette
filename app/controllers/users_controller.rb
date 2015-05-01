@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #before_filter :set_ip_address, :only => :create
+
   def new
     @user = User.new
   end
@@ -19,6 +21,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :ip_address)
+      params.require(:user).permit(:username, :ip_address).merge(
+        ip_address: request.remote_ip)
     end
 end
