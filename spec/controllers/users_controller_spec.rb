@@ -32,7 +32,6 @@ RSpec.describe UsersController, type: :controller do
       get :show, id: user
       expect(response).to render_template :show
     end
-
   end
 
   describe 'POST #create' do

@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 feature 'user sign in/out process' do
-
   context 'registered guest' do
     it 'should sign in/out the user' do
       # sign in
-      page.driver.options[:headers] = {'REMOTE_ADDR' =>  '192.168.0.1'}
+      page.driver.options[:headers] = { 'REMOTE_ADDR' =>  '192.168.0.1' }
       user = create(:user)
       visit root_path
       click_button 'Sign in'
@@ -19,4 +18,3 @@ feature 'user sign in/out process' do
     end
   end
 end
-

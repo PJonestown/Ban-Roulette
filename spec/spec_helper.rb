@@ -17,8 +17,4 @@ RSpec.configure do |config|
   config.order = :random
 
   Kernel.srand config.seed
-
- # def test_sign_in(user)
-  #  controller.current_user = user
-  #end
 end
