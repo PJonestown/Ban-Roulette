@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in(@user)
     else
+      flash.now[:warning] = "Already an account under #{request.remote_ip}. Click the 'Sign in' button"
       render :new
     end
   end
