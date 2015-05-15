@@ -20,6 +20,21 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe 'GET #show' do
+    it 'assigns requested user as @user' do
+      user = create(:user)
+      get :show, id: user
+      expect(assigns(:user)).to eq user
+    end
+
+    it 'renders the show template' do
+      user = create(:user)
+      get :show, id: user
+      expect(response).to render_template :show
+    end
+
+  end
+
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'saves the new contact to the database' do

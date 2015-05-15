@@ -4,7 +4,7 @@ feature 'user sign in/out process' do
 
   context 'registered guest' do
     it 'should sign in/out the user' do
-      #sign in
+      # sign in
       page.driver.options[:headers] = {'REMOTE_ADDR' =>  '192.168.0.1'}
       user = create(:user)
       visit root_path
@@ -12,7 +12,7 @@ feature 'user sign in/out process' do
       expect(current_path).to eq(root_path)
       expect(page).to have_content(user.username)
 
-      #sign out
+      # sign out
       click_link 'Sign out'
       expect(current_path).to eq(root_path)
       expect(page).to have_button 'Sign in'

@@ -9,6 +9,7 @@ feature 'user sign up' do
       expect{
         click_button 'Sign up'
       }.to change(User, :count).by(1)
+      expect(page).to have_link('Sign out')
     end
   end
 end

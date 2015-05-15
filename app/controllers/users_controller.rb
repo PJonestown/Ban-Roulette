@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params.merge(ip_address: request.remote_ip))
     if @user.save
-      redirect_to users_path
+      sign_in(@user)
     else
       render :new
     end

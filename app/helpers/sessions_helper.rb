@@ -7,6 +7,11 @@ module SessionsHelper
     @current_user = user
   end
 
+  def sign_in(user)
+    session[:user_id] = user.id
+    redirect_to root_url #flash
+  end
+
   def signed_in?
     !current_user.nil?
   end
