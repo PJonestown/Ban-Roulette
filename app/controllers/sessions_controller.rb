@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(ip_address: request.remote_ip)
     if user
-      sign_in(user)
+      sign_in_user(user)
     else
       flash[:warning] = "No associated account under #{request.remote_ip}. Create a new user"
       redirect_to new_user_path

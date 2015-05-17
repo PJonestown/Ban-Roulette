@@ -5,7 +5,7 @@ module SessionsHelper
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def sign_in(user)
+  def sign_in_user(user)
     session[:user_id] = user.id
     flash[:success] = 'Signed in successfully'
     redirect_to root_url

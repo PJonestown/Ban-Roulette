@@ -14,6 +14,7 @@ gem 'unicorn'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'haml-rails'
+gem 'devise'
 
 
 group :development, :test do
