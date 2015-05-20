@@ -41,6 +41,12 @@ RSpec.describe UsersController, type: :controller do
           post :create, user: attributes_for(:user)
         }.to change(User, :count).by(1)
       end
+
+      it 'creates an associated ban' do
+        expect{
+          post :create, user: attributes_for(:user)
+        }.to change(Ban, :count).by(1)
+      end
     end
     context 'with invalid attributes' do
       it 'renders new' do
