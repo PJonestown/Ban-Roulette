@@ -56,4 +56,21 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'PATCH #ban_user' do
+
+    xit 'locates the requested @user' do
+      @user = create(:user)
+      patch :ban_user, id: @user 
+      expect(assigns(:user)).to eq(@user)
+     end
+
+
+    xit 'bans the current user' do
+      #ban = create(:ban)
+      user = create(:user)
+      patch :ban_user, id: @user
+      expect(user.banned?).to eq(true)
+    end
+  end
 end

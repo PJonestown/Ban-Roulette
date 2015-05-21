@@ -20,4 +20,20 @@ RSpec.describe BansController, type: :controller do
       end
     end
   end
+
+ describe 'PATCH #ban_user' do
+
+      xit 'locates the requested @ban' do
+        @ban = create(:ban)
+        put :ban_user, id: @ban
+        expect(assigns(:ban)).to eq(@ban)
+      end
+
+
+    xit 'bans the current user' do
+      ban = create(:ban)
+      patch :ban_user, id: @ban
+      expect(user.banned?).to eq(true)
+    end
+  end
 end
