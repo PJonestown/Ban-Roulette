@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   patch 'bans/:id', to: 'bans#update'
   #patch 'ban_user/:id', to: 'users#ban_user'
-  patch 'users/:id/ban_user', to: 'users#ban_user'
-  post 'bans/ban_user', to: 'bans#ban_user'
-
+  #patch 'users/:id/ban_user', to: 'users#ban_user'
+  #post 'bans/ban_user', to: 'bans#ban_user'
 end

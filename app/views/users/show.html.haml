@@ -1,1 +1,5 @@
-= @user.username
+%h1= @user.username
+- if @user.banned?
+  %p= @user.ban.end_time
+- else
+  %p Currently not banned!

@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   def create_ban
     Ban.create(user: self)
   end
+
+  def banned?
+    if self.ban.end_time == nil || self.ban.end_time.past?
+      false
+    else
+      true
+    end
+  end
 end
