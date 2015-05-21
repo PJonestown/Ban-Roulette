@@ -1,7 +1,14 @@
 FactoryGirl.define do
-  factory :ban do
-    start_time "2015-05-20 14:54:07"
-end_time "2015-05-20 14:54:07"
-  end
+  today = DateTime.now
 
+  factory :ban do
+    start_time nil
+    end_time nil
+    association :user
+
+    factory :current_ban do
+      start_time today
+      end_time today + 1.minute
+    end
+  end
 end

@@ -48,6 +48,7 @@ RSpec.describe UsersController, type: :controller do
         }.to change(Ban, :count).by(1)
       end
     end
+
     context 'with invalid attributes' do
       it 'renders new' do
         post :create, user: attributes_for(:invalid_user)
